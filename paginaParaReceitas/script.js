@@ -1,4 +1,4 @@
-import {BotaoDeUmFundo, BordaGiravel} from '../códigoFonte/webComponents.js';
+import {BotaoDeUmFundo, BordaGiravel} from '../codigoFonte/webComponents.js';
 customElements.define('botao-001', BotaoDeUmFundo);
 customElements.define('borda-giravel', BordaGiravel);
 
@@ -10,15 +10,12 @@ window.addEventListener('DOMContentLoaded', () => {
         dific: descricao[0],
         quantDeIngr: descricao[1]
     };
-
     let nome = document.getElementById('nome');
     nome.innerText = `${paraApresentacao.nome}`;
     let dific = document.getElementById('dific');
     dific.innerText = `Difficulty: ${paraApresentacao.dific}`;
     let quantDeIngr = document.getElementById('quantDeIngr');
     quantDeIngr.innerText = `Quantity of ingredients: ${paraApresentacao.quantDeIngr}`;
-
-    console.log(receita)
 
     let template = document.createElement('aside');
     template.classList.add('ingredientes__cadaUm');
@@ -27,64 +24,21 @@ window.addEventListener('DOMContentLoaded', () => {
         <p class="ingredientes__cadaUm__medida"></p>
     `;
 
-    let ingredientes = [];
-    let medidaDosIngr = [];
+    let ingredientes = Object.entries(receita).filter((el, ind) => { if (ind >= 9 && ind <= 28) { return el } });
+    let medidaDosIngr = Object.entries(receita).filter((el, ind) => { if (ind >= 29 && ind <= 49) { return el } });
 
     let sessaoParaIngredientes = document.getElementById('ingred');
     let englobador = document.createDocumentFragment();
 
-    ingredientes.push(receita.strIngredient1);
-    ingredientes.push(receita.strIngredient2);
-    ingredientes.push(receita.strIngredient3);
-    ingredientes.push(receita.strIngredient4);
-    ingredientes.push(receita.strIngredient5);
-    ingredientes.push(receita.strIngredient6);
-    ingredientes.push(receita.strIngredient7);
-    ingredientes.push(receita.strIngredient8);
-    ingredientes.push(receita.strIngredient9);
-    ingredientes.push(receita.strIngredient10);
-    ingredientes.push(receita.strIngredient11);
-    ingredientes.push(receita.strIngredient12);
-    ingredientes.push(receita.strIngredient13);
-    ingredientes.push(receita.strIngredient14);
-    ingredientes.push(receita.strIngredient15);
-    ingredientes.push(receita.strIngredient16);
-    ingredientes.push(receita.strIngredient17);
-    ingredientes.push(receita.strIngredient18);
-    ingredientes.push(receita.strIngredient19);
-    ingredientes.push(receita.strIngredient20);
-
-    medidaDosIngr.push(receita.strMeasure1);
-    medidaDosIngr.push(receita.strMeasure2);
-    medidaDosIngr.push(receita.strMeasure3);
-    medidaDosIngr.push(receita.strMeasure4);
-    medidaDosIngr.push(receita.strMeasure5);
-    medidaDosIngr.push(receita.strMeasure6);
-    medidaDosIngr.push(receita.strMeasure7);
-    medidaDosIngr.push(receita.strMeasure8);
-    medidaDosIngr.push(receita.strMeasure9);
-    medidaDosIngr.push(receita.strMeasure10);
-    medidaDosIngr.push(receita.strMeasure11);
-    medidaDosIngr.push(receita.strMeasure12);
-    medidaDosIngr.push(receita.strMeasure13);
-    medidaDosIngr.push(receita.strMeasure14);
-    medidaDosIngr.push(receita.strMeasure15);
-    medidaDosIngr.push(receita.strMeasure16);
-    medidaDosIngr.push(receita.strMeasure17);
-    medidaDosIngr.push(receita.strMeasure18);
-    medidaDosIngr.push(receita.strMeasure19);
-    medidaDosIngr.push(receita.strMeasure20);
-
-
     ingredientes.forEach((el, ind) => {
-        if (el === '' || el === null) {
+        if (el[1] === '' || el[1] === null) {
             return;
         } else {
             let umIngrediente = template.cloneNode(true);
             let nome = umIngrediente.querySelector('.ingredientes__cadaUm__nome');
-            nome.innerText = `${el}`; 
+            nome.innerText = `${el[1]}`; 
             let medida = umIngrediente.querySelector('.ingredientes__cadaUm__medida');
-            medida.innerText = `${medidaDosIngr[ind]}`;
+            medida.innerText = `${medidaDosIngr[ind][1]}`;
             englobador.append(umIngrediente);
         }   
     });
@@ -494,4 +448,4 @@ function aplicandoResponsividade() {
 };
 
 let btnRetornar = document.getElementById('btnRetornar');
-btnRetornar.addEventListener('click', () => { location.replace('../páginaInicial/index.html'); });
+btnRetornar.addEventListener('click', () => { location.replace('../paginaInicial/index.html'); });

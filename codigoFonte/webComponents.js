@@ -104,7 +104,7 @@ export class BordaGiravel extends HTMLElement {
                     transform: rotate(180deg);
                 }
             </style>
-            <img id="img" class="" src="../códigoFonte/recursos/bordaGiravel.png" alt="Fala baixo nengue">
+            <img id="img" class="" src="../codigoFonte/recursos/bordaGiravel.png" alt="Fala baixo nengue">
         `;
 
         shadowDOM.append(html);

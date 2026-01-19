@@ -23,7 +23,11 @@
 }
 
 html {
+    cursor: url('Recursos/Icones/cursor.png'), auto;
     scroll-behavior: smooth;
+}
+a:hover {
+    cursor: url('Recursos/Icones/cursorEmLink.png'), auto;
 }
 
 /* ===================================================== */
@@ -146,6 +150,114 @@ html {
 
     width: 100%;
 }
+
+.sobre {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-content: center;
+
+    padding: 25px 0px;
+    margin: 75px 0px 25px 0px;
+
+    background: var(--cor2);
+}
+.sobre__img {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    width: 40%;
+    height: 500px;
+
+    position: relative;
+}
+.sobre__img > * {
+    border: 2px solid var(--corNeutra);
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px black;
+    transition: all 0.25s linear 0s;
+}
+.sobre__img__1 {
+    position: absolute;
+    bottom: 55px;
+    left: 20%;
+
+    height: 400px;
+    width: 300px;
+
+    transform: perspective(600px) rotateX(5deg) rotateY(10deg);
+
+    background: url('Recursos/Imagens/img1.jpg') no-repeat center center / cover;
+}
+.sobre__img__2 {
+    position: absolute;
+    bottom: 35px;
+    left: 5%;
+
+    transform: perspective(600px) rotateX(15deg) rotateY(45deg);
+
+    height: 250px;
+    width: 200px;
+
+    background: url('Recursos/Imagens/img2.jpg') no-repeat center center / cover;
+}
+.sobre__img > article:hover {
+    
+    transform: none;
+}
+.sobre__text {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+
+    width: 60%;
+    height: auto;
+
+    padding: 0px 10% 0px 5%;
+    
+    color: var(--corBranca);
+
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.322);
+}
+.sobre__text__h1 {
+    font: normal bold 4em var(--fontePrincipal);    
+    margin: 0px 0px 25px 0px;
+}
+.sobre__text__p {
+    font: normal normal 1em var(--fontePrincipal); 
+    text-indent: 25px;
+    line-height: 25px;
+}
+.sobre__text__links {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    margin: 25px 0px 0px 0px;
+
+    font: normal normal 0.9em var(--fonteSecundaria); 
+}
+.sobre__text__links > a {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+    color: var(--corBranca);
+}
+.sobre__text__links > a > img {
+    width: 35px;
+
+    margin: 0px 10px 0px 0px;
+
+}
+
 
 /* ===================================================== */
 /* Estilização da sessão para pesquisa de receitas */
@@ -399,9 +511,52 @@ html {
     .objetivo__artText {
         width: 100%;
     }
+
+    .sobre__text {
+        padding: 0px 25px 0px 0px;
+    }
+    .sobre__img__1 {
+        height: 300px;
+        width: 200px;
+
+        position: static;
+    }
+    .sobre__img__2 {
+        height: 200px;
+        width: 150px;
+    }
 }
 
 @media (max-width: 700px) {
+    .sobre {
+        flex-flow: column nowrap;
+
+        padding: 25px;
+    }
+    .sobre__img {
+        width: 100%;
+        order: 1;
+    }
+    .sobre__img > article {
+        transform: none;
+    }
+    .sobre__text {
+        width: 100%;
+    }
+    .sobre__img__1 {
+        align-self: center;
+
+        height: 400px;
+        width: 300px;
+
+        transform: none;
+    }
+    .sobre__img__2 {
+        transform: translateX(25%);
+
+        height: 250px;
+        width: 200px;
+}
 }
 
 @media (max-width: 525px) {

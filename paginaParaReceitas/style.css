@@ -23,7 +23,11 @@
 }
 
 html {
+    cursor: url('Recursos/Icones/cursor.png'), auto;
     scroll-behavior: smooth;
+}
+a:hover {
+    cursor: url('Recursos/Icones/cursorEmLink.png'), auto;
 }
 
 /* ===================================================== */

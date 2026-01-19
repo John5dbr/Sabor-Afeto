@@ -1,11 +1,10 @@
-import {BotaoDeUmFundo} from "../códigoFonte/webComponents.js";
+import {BotaoDeUmFundo} from "../codigoFonte/webComponents.js";
 customElements.define('botao-001', BotaoDeUmFundo);
 
 let idDaAnimacao;
 let rotacao = 0;
 let icone = document.querySelector('.IconeDeCarregamento');
 function aplicarAnimacao() { 
-
     rotacao += 30;
     icone.style.transform = `rotate(${rotacao}deg)`;
 
@@ -24,47 +23,12 @@ function definirDescricao(receita) {
 
     let contadorDeDificuldade = 0;
 
-    if (receita.strIngredient1 != '') {
-        contadorDeDificuldade++
-    } if (receita.strIngredient2 != '') {
-        contadorDeDificuldade++
-    } if (receita.strIngredient3 != '') {
-        contadorDeDificuldade++
-    } if (receita.strIngredient4 != '') {
-        contadorDeDificuldade++
-    } if (receita.strIngredient5 != '') {
-        contadorDeDificuldade++
-    } if (receita.strIngredient6 != '') {
-        contadorDeDificuldade++
-    } if (receita.strIngredient7 != '') {
-        contadorDeDificuldade++
-    } if (receita.strIngredient8 != '') {
-        contadorDeDificuldade++
-    } if (receita.strIngredient9 != '') {
-        contadorDeDificuldade++
-    } if (receita.strIngredient10 != '') {
-        contadorDeDificuldade++
-    } if (receita.strIngredient11 != '') {
-        contadorDeDificuldade++
-    } if (receita.strIngredient12 != '') {
-        contadorDeDificuldade++
-    } if (receita.strIngredient13 != '') {
-        contadorDeDificuldade++
-    } if (receita.strIngredient14 != '') {
-        contadorDeDificuldade++
-    } if (receita.strIngredient15 != '') {
-        contadorDeDificuldade++
-    } if (receita.strIngredient16 != '') {
-        contadorDeDificuldade++
-    } if (receita.strIngredient17 != '') {
-        contadorDeDificuldade++
-    } if (receita.strIngredient18 != '') {
-        contadorDeDificuldade++
-    } if (receita.strIngredient19 != '') {
-        contadorDeDificuldade++
-    } if (receita.strIngredient20 != '') {
-        contadorDeDificuldade++
-    }
+    let ingred = Object.entries(receita).filter((el, ind) => { if (ind >= 9 && ind <= 28) { return el } });
+    ingred.forEach(el => {
+        if (el[1] != '') {
+            contadorDeDificuldade++
+        }
+    });
 
     if (contadorDeDificuldade <= 7) {
         return ['Easy', contadorDeDificuldade];
@@ -169,7 +133,6 @@ document.getElementById('pesquisar').addEventListener('keydown', (event) => { if
 let botaoSearch = document.getElementById('botaoSearch');
 botaoSearch.addEventListener('click', () => { 
     document.getElementById('pesquisar').focus();
-    window.scrollTo(0, 475); 
 }); 
 
 sessaoParaReceitas.addEventListener('click', verReceita) 
@@ -182,6 +145,6 @@ function verReceita(event) {
         let receitaTransferida = API.meals.find(el => el.idMeal == ident);
         localStorage.setItem('receita', JSON.stringify(receitaTransferida));
         localStorage.setItem('descricao', JSON.stringify(definirDescricao(receitaTransferida)));
-        location.replace('../páginaParaReceitas/index.html');
+        location.replace('../paginaParaReceitas/index.html');
     }
 };

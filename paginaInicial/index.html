@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Recursos/Imagens/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Flavor & Affection</title>
+</head>
+<body>
+    <header class="hdr" >
+        <section class="hdr__secLogo  hdr__items">
+            <h1 class="hdr__secLogo__h1">Flavor & Affection</h1>
+        </section>
+        <nav class="hdr__nav hdr__items">
+            <a href="#Purpose" class="hdr__nav__a">Purpose</a>
+            <a href="#Contact" class="hdr__nav__a">Contact Us</a>
+        </nav>
+        </section>
+        <section class="hdr__secBtn hdr__items">
+            <botao-001 cor-de-fundo="#FF6C05" cor-de-borda="rgb(233, 233, 233)" largura="100" altura="35" id="botaoSearch">
+                <span slot="text">Search</span>
+            </botao-001>
+        </section>
+    </header>
+    <section class="objetivo" id="Purpose">
+        <article class="objetivo__artText">
+            <h1 class="objetivo__artText__h1">Find the recipe for your meal!</h1>
+            <p class="objetivo__artText__p">Hello World! My name is Pedro de Souza and I am a self-taught student in the field of software development. To that end, I am undertaking this project to practice and test the knowledge I have acquired so far, so I hope you enjoy it 😊</p>
+            <aside class="objetivo__artText__btns">
+                <botao-001 cor-de-fundo="#FF6C05" cor-de-borda="rgb(233, 233, 233)" largura="125" altura="35">
+                    <span slot="text">Portfolio</span>
+                </botao-001>
+                <botao-001 cor-de-fundo="#FF6C05" cor-de-borda="rgb(233, 233, 233)" largura="225" altura="35">
+                    <span slot="text">Contact the developer</span>
+                </botao-001>
+            </aside>
+            <aside class="objetivo__artText__status">
+                <aside class="status__dados">
+                    <p class="status__dados__txtPrincipal">+7 Months</p>
+                    <p class="status__dados__txtComum">Approximate study time.</p>
+                </aside>
+                <aside class="status__dados">
+                    <p class="status__dados__txtPrincipal">0.0</p>
+                    <p class="status__dados__txtComum">User review.</p>
+                </aside>
+                <aside class="status__dados">
+                    <p class="status__dados__txtPrincipal">5 days</p>
+                    <p class="status__dados__txtComum">To conclude this project.</p>
+                </aside>
+            </aside>
+        </article>
+        <article class="objetivo__artImg">  
+            <img src="Recursos/Imagens/fundoSessaoObjetivo.jpg" class="objetivo__artImg__img" alt="fundoSessaoObjetivo"> 
+        </article>        
+    </section>
+    <main class="main" id="Search">
+        <section class="main__pesquisar">
+            <input type="text" name="pesquisar" id="pesquisar" class="main__pesquisar__input" placeholder="To search for">
+            <button class="main__pesquisar__btn" id="botaoParaPesquisar">
+                <img src="Recursos/Icones/iconeParaPesquisar.svg" alt="iconeParaPesquisar">
+            </button>
+            <input type="number" class="main__pesquisar__numDeItems" name="numeroDeItens" id="numeroDeItens" placeholder="Quant. of Recipes">
+        </section>
+        <section class="main__resultado" id="sessaoParaReceitas">
+        </section>
+        <img class="IconeDeCarregamento" src="Recursos/Icones/iconeDeCarregamento.png" alt="IconeDeCarregamento">
+    </main>
+    <footer class="ftr" id="Contact">
+        <section class="ftr__secDev">
+            <h1 class="ftr__secDev__h1">Contact information:</h1>
+            <p>Phone: +55 (11) 91737-4998</p>
+            <p>Github: john5dbr</p>
+            <p>@pedro_Leproso</p>
+        </section>
+        <section class="ftr__secSrc">
+            <h1 class="ftr__secSrc__h1">Sources:</h1>
+            <p>API: TheMealDB</p>
+            <p>Inspirations: @JPNARIA15</p>
+            <p></p>
+        </section>
+        <article class="ftr__text-Auto">
+            <aside class="ftr__text-Auto__text"> 
+                <div class="ftr__text-Auto__isolador"></div> 
+            </aside>
+        </article>
+        <p class="ftr__finalizacao">© 2026 - Flavor & Affection </p>
+    </footer>
+    <script type="module" src="script.js" defer></script>
+</body>
+</html>

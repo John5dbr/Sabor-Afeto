@@ -1,0 +1,412 @@
+@charset "UTF-8";
+
+/* ===================================================== */
+/* Configurações Básicas */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor1: #FF6C05;
+    --cor2: #FC5D00;
+    --corPreta: black;
+    --corBranca: white;
+    --corNeutra: rgb(209, 209, 209);
+    --fontePrincipal: 'Montserrat';
+    --fonteSecundaria: 'Share Tech';
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===================================================== */
+/* Estilização do Header (cabeçalho) */
+
+.hdr {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 15px;
+
+    padding: 15px 0px;
+
+    width: 100%;
+
+    position: fixed;
+    top: 0px;
+    z-index: 1;
+
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.096);
+    background: var(--corBranca);
+}
+
+.hdr__items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px 25px;
+}
+
+.hdr__secLogo {
+    min-width: 250px;
+}
+.hdr__secLogo__h1 {
+    font: normal bold 1.5em var(--fontePrincipal);
+}
+
+.hdr__nav {
+    flex-wrap: wrap-reverse;
+}
+.hdr__nav__a {
+    font: normal normal 1em var(--fonteSecundaria);
+    color: var(--corPreta);
+    text-decoration: none;
+}
+.hdr__nav__a:hover {
+    color: var(--cor2);
+    font-weight: bold;
+}
+
+.hdr__secBtn {
+    min-width: 150px;
+}
+
+/* ===================================================== */
+/* Estilização da sessão de Purpose (propósito/objetivo) */
+
+.objetivo {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+    width: 100%;
+    
+    padding: 95px 0px 0px 0px;
+}
+
+.objetivo__artText {
+    min-width: 485px;
+    width: 40%;
+
+    padding: 10px 15px;
+}
+.objetivo__artText__h1 {
+    font: normal bold 3.25em var(--fontePrincipal);
+
+    margin: 0px 0px 10px 0px;
+}
+.objetivo__artText__p {
+    font: normal normal 1.1em var(--fontePrincipal);
+
+    margin: 0px 0px 15px 0px;
+}
+
+.objetivo__artText__btns {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 25px;
+
+    margin: 0px 0px 45px 0px;
+}
+
+.objetivo__artText__status {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 25px;
+}
+.status__dados__txtPrincipal {
+    font: normal bold 1.5em var(--fontePrincipal);
+    color: var(--cor2);
+}
+.status__dados__txtComum {
+    font: normal normal 1em var(--fontePrincipal);
+}
+
+.objetivo__artImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 45%;
+}
+.objetivo__artImg > img {
+    border-radius: 25px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.534);
+
+    width: 100%;
+}
+
+/* ===================================================== */
+/* Estilização da sessão para pesquisa de receitas */
+
+.main {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+
+    padding: 50px 0px;
+}
+
+.main__pesquisar {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px 0px;
+}
+.main__pesquisar__input {
+    font: normal normal 1em var(--fontePrincipal);
+    border: 2px solid var(--corNeutra);
+
+    padding: 10px 0px 10px 15px;
+}
+.main__pesquisar__input:focus {
+    outline: none;
+}
+.main__pesquisar__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid var(--corNeutra);
+    border-left: none;
+
+    width: 43px;
+    height: 43px;
+
+    background: var(--cor1);
+}
+.main__pesquisar__numDeItems {
+    font: normal normal 1em var(--fontePrincipal);
+    border: 2px solid var(--corNeutra);
+
+    margin: 0px 0px 0px 25px;
+    padding: 10px 0px 10px 15px;
+}
+.main__pesquisar__numDeItems:focus {
+    outline: none;
+}
+.main__pesquisar__numDeItems--erro {
+    border: 2px solid #FC5D00 ;
+}
+
+.main__resultado {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 25px;
+
+    width: 100%;
+
+    padding: 0px 25px;
+
+    font: normal bold 1em var(--fonteSecundaria);
+}
+.main__resultado__card {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 250px;
+    height: 300px;
+    
+    padding: 0px 0px 25px 0px;
+
+    transition: all 0.35s ease-out 0s;
+
+    text-align: center;
+    border-radius: 5px;
+    border: 2.5px solid var(--corNeutra);
+    box-shadow: 0px 0px 15px var(--corNeutra);
+}
+.main__resultado__card:hover {
+    transform: scale(105%);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.445);
+}
+.card__img {
+    width: 100%;
+    height: 50%;
+
+    border-radius: 5px 5px 0px 0px;
+}
+.card__nome {
+    font: normal bold 1.25em var(--fontePrincipal);
+    
+    width: 100%;
+
+    padding: 0px 10px;
+}
+.card__descricao {
+    font: normal normal .9em var(--fontePrincipal);
+    
+    width: 100%;
+
+    padding: 0px 10px;
+}
+.card__btn {
+    padding: 7px 15px;
+
+    font: normal bold 1em var(--fontePrincipal);
+    color: var(--corBranca);
+    background: var(--cor1);
+    border-radius: 5px;
+    border: 2px solid var(--corNeutra);
+}
+.IconeDeCarregamento {
+    display: none;
+
+    width: 100px;
+
+    transition: all 0.5s ease-in 0s;
+}
+.pesquisando {
+    display: block;
+}
+
+.main__mostrarMais {
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50px;
+    background: var(--cor1) url('Recursos/Icones/iconeMostrarMais.svg') no-repeat center center / cover;
+}
+
+/* ===================================================== */
+/* Estilização da sessão para footer (contact) */
+
+.ftr {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-content: center;
+    gap: 20px;
+
+    width: 100%;
+
+    padding: 20px;
+
+    background: black;
+    color: var(--corBranca);
+
+    font: normal normal 1em var(--fontePrincipal);
+}
+
+.ftr__secDev {
+    width: 300px;
+}
+.ftr__secDev__h1 {
+    font-size: 1.5em;
+}
+.ftr__secSrc {
+    width: 300px;
+}
+.ftr__secSrc__h1 {
+    font-size: 1.5em;
+}
+
+.ftr__text-Auto {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100vw;
+}
+.ftr__text-Auto__text {
+    position: relative;
+    width: auto;
+}
+.ftr__text-Auto__text::after {
+    content: '';
+    animation: textos 20s linear 0s infinite normal forwards; 
+}
+@keyframes textos {
+    0% {
+        content: 'Get in touch :)';
+    }   
+    25% {
+        content: 'Search your favorite meal!';
+    }
+    50% {
+        content: 'Look for a recipe!';
+    }
+    75% {
+        content: 'Share this project!';
+    }
+    100% {
+        content: 'Get in touch :)';
+    }
+}
+.ftr__text-Auto__isolador {
+    text-align: left;
+    background: black;
+    position: absolute;
+    right: 0px;
+    animation: escrever 5s steps(32) 0s infinite normal forwards;
+}
+@keyframes escrever {
+    0% {
+        width: 0%;
+    }
+    35% {
+        width: 0%;
+    }
+    50% {
+        width: 100%;
+    }
+    100% {
+        width: 0%;
+    }
+}
+.ftr__text-Auto__isolador::before {
+    content: '|';
+    animation: piscaPisca 0.75s linear 0s infinite normal forwards;
+}
+@keyframes piscaPisca {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.ftr__finalizacao {
+    text-align: center;
+    width: 100vw;
+}
+
+/* ===================================================== */
+/* Responsividade */
+
+@media (max-width: 1000px) {
+    .objetivo__artImg {
+        display: none;
+    }
+    .objetivo__artText {
+        width: 100%;
+    }
+}
+
+@media (max-width: 700px) {
+}
+
+@media (max-width: 525px) {
+    .main__pesquisar__numDeItems {
+        margin: 0px;
+        width: 263px;
+    }
+}

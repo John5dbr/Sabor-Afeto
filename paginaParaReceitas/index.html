@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Recursos/imagens/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Flavor & Affection</title>
+</head>
+<body>
+    <header class="hdr" >
+        <section class="hdr__secLogo  hdr__items">
+            <h1 class="hdr__secLogo__h1">Flavor & Affection</h1>
+        </section>
+        <nav class="hdr__nav hdr__items">
+            <a href="#top" class="hdr__nav__a">Top</a>
+            <a href="#sessaoInstrucao" class="hdr__nav__a">Instructions</a>
+            <a href="#Tutorial" class="hdr__nav__a">Tutorial</a>    
+            <a href="#Contact" class="hdr__nav__a">Contact Us</a>      
+        </nav>
+        </section>
+        <section class="hdr__secBtn hdr__items">
+            <botao-001 cor-de-fundo="#FF6C05" cor-de-borda="rgb(233, 233, 233)" largura="100" altura="35" id="btnRetornar">
+                <span slot="text">Return</span>
+            </botao-001>
+        </section>
+    </header>
+
+    <main class="main">
+        <section class="main__apresentacao" id="top">
+            <section class="apresentacaoText" id="">
+                <h1 class="apresentacaoText__h1" id="nome"></h1>
+                <p class="apresentacaoText__dific" id="dific"></p>
+                <p class="apresentacaoText__quantDeIngr" id="quantDeIngr"></p>
+                <article class="apresentacaoText__ingredientes" id="ingred"></article>
+            </section>
+        </section>
+        <article class="main__artImgs">
+            <img src="Recursos/icones/setaParaEsquerda.svg" alt="setaParaEsquerda" class="artImgs__icon" id="moverImgParaEsquerda">
+            <section class="main__artImgs__conteiner" id="imgs">
+                <article class="posicao1" id="img1"></article>
+                <article class="posicao2" id="img2"></article>
+                <article class="posicao3" id="img3"></article>
+            </section>
+            <img src="Recursos/icones/setaParaDireita.svg" alt="setaParaDireita" class="artImgs__icon" id="moverImgParaDireita">
+        </article>
+        <section class="main__instrucao" >
+            <section id="sessaoInstrucao" class="instrucao__text">
+                <div class="instrucao__text__titulo">
+                    <aside class="instrucao__text__titulo__img1"></aside>
+                    <p>instructions</p>
+                    <aside class="instrucao__text__titulo__img2"></aside>
+                </div>
+            </section>
+            <borda-giravel altura="100px" largura="100px" posicao="cantoSuperiorEsquerdo"></borda-giravel>
+            <borda-giravel altura="100px" largura="100px" posicao="cantoSuperiorDireito"></borda-giravel>
+            <borda-giravel altura="100px" largura="100px" posicao="cantoInferiorEsquerdo"></borda-giravel>
+            <borda-giravel altura="100px" largura="100px" posicao="cantoInferiorDireito"></borda-giravel>
+        </section>
+        <section class="main__tutorial" id="Tutorial">
+            <article class="main__tutorial__iframe" id="iframe"></article>
+            <div class="main__tutorial__linha"></div>
+        </section>
+    </main>
+
+    <footer class="ftr" id="Contact">
+        <section class="ftr__secDev">
+            <h1 class="ftr__secDev__h1">Contact information:</h1>
+            <p>Phone: +55 (11) 91737-4998</p>
+            <p>Github: john5dbr</p>
+            <p>@pedro_Leproso</p>
+        </section>
+        <section class="ftr__secSrc">
+            <h1 class="ftr__secSrc__h1">Sources:</h1>
+            <p>API: TheMealDB</p>
+            <p>Inspirations: @JPNARIA15</p>
+            <p></p>
+        </section>
+        <article class="ftr__text-Auto">
+            <aside class="ftr__text-Auto__text"> 
+                <div class="ftr__text-Auto__isolador"></div> 
+            </aside>
+        </article>
+        <p class="ftr__finalizacao">© 2026 - Flavor & Affection </p>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
